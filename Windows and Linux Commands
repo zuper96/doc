@@ -1,0 +1,115 @@
+Comparison of Common DOS and Linux Commands
+@ Copies files
+W : copy
+L : cp
+Basic Linux Example : cp thisfile.txt /home/thisdirectory
+
+@ Moves files
+W : move
+L : mv
+Basic Linux Example : mv thisfile.txt /home/thisdirectory
+
+@ Lists files
+W : dir
+L : ls
+Basic Linux Example : ls
+
+@ Clears screen
+W : cls
+L : clear
+Basic Linux Example : clear
+
+@ Closes shell prompt
+W : exit
+L : exit
+Basic Linux Example : exit
+
+@ Displays or sets date
+W : date
+L : date
+Basic Linux Example : date
+
+@ Deletes files
+W : del
+L : rm
+Basic Linux Example : rm thisfile.txt
+
+@ "Echoes" output to the screen
+W : echo
+L : echo
+Basic Linux Example : echo this message
+
+@ Edits text files
+W : edit
+L : gedit([a])
+Basic Linux Example : gedit thisfile.txt
+
+@ Compares the contents of files
+W : fc
+L : diff
+Basic Linux Example : diff file1 file2
+
+@ Finds a string of text in a file
+W : find
+L : grep
+Basic Linux Example : grep word or phrase thisfile.txt
+
+@ Formats a diskette
+W : format a: (if diskette is in A:)
+L : mke2fs
+Basic Linux Example : /sbin/mke2fs /dev/fd0 (/dev/fd0 is the Linux equivalent of A:)
+
+@ Displays command help
+W : command /?
+L : man or info
+Basic Linux Example : man command
+
+@ Creates a directory
+W : mkdir
+L : mkdir
+Basic Linux Example : mkdir directory
+
+@ Views contents of a file
+W : more
+L : less([b])
+Basic Linux Example : less thisfile.txt
+
+@ Renames a file
+W : ren
+L : mv([c])
+Basic Linux Example : mv thisfile.txt thatfile.txt
+
+@ Displays your location in the file system
+W : chdir
+L : pwd
+Basic Linux Example : pwd
+
+@ Changes directories with a specified path (absolute path)
+W : cd pathname
+L : cd pathname
+Basic Linux Example : cd /directory/directory
+
+@ Changes directories with a relative path
+W : cd..
+L : cd ..
+Basic Linux Example : cd ..
+
+@ Displays the time
+W : time
+L : date
+Basic Linux Example : date
+
+@ Shows amount of RAM in use
+W : mem
+L : free
+Basic Linux Example : free
+
+@ 
+W : 
+L : 
+Basic Linux Example : 
+
+@ 
+W : 
+L : 
+Basic Linux Example : 
