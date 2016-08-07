@@ -1,0 +1,8 @@
+Cara mendelete semua comment /* Block Comment */ pada notepad++ :
+1. Search mode : regular expression
+2. ketik pada find what : /\*.*?\*/
+  /\* artinya dimulai dari /*
+  .*? artinya karakter apapun
+  \*/ artinya diakhiri */
+3. kosongkan replace with
+4. Klik replace.
