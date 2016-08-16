@@ -1,0 +1,107 @@
+Apa itu router ?
+Istilah router pada dasarnya berasal dari Bahasa Inggris yaitu kata “Route” yang artinya “rute/jalan/trayek” 
+atau pun “mengarahkan perjalanan melalui” yang ditambahi dengan imbuhan “er” yang maknanya pelaku. 
+Sehingga, jika diartikan dari asal katanya, maka router dapat diartikan sebagai sebuah perangkat yang digunakan 
+untuk mengarahkan signal pada jaringan komputer atau mengarahkan jalan ke sistem/aplikasi pada aplikasi web.
+
+Dalam pemrograman web router bertugas
+- Router mengatur pintu masuk yang berupa request pada aplikasi,
+- memilah dan mengolah request url untuk kemudian diproses sesuai dengan tujuan akhir url,
+- memilah request berdasarkan http method ( GET atau POST ),
+
+Mengapa harus menggunakan Router?
+
+Mungkin diantara teman-teman ada yang berpikir, tanpa implementasi konsep router pun kita dapat membuat sebuah aplikasi. 
+Ya! betul sekali, memang nyatanya seperti itu. Masih banyak aplikasi yang tidak pakai konsep router, 
+dan mengandalkan rute langsung ke path file (saya ambil contoh PHP) :
+http://domain/product.php
+http://domain/checkout.php?id=1
+http://domain/page.php?slug=about-us
+
+Tetap berjalan dan menghasilkan uang, namun implementasi seperti ini adalah cara lama yang kurang elegan. 
+Kita akan kesulitan menangani url yang SEO friendly dengan segment yang dalam.
+Bagaimana jika kita ingin mempunyai url seperti ini:
+http://domain/product/category/id/1
+Atau mungkin mempunyai segment lebih dalam lagi dengan parameter di tengah seperti ini:
+http://domain/dashboard/post/type/{id}/edit
+
+Dan bagaimana jika ingin menerapkan aturan REST, dengan masing-masing url hanya menangani http method tertentu seperti ini :
+http://domain/user/register (hanya menerima POST)
+http://domain/user/{username} (hanya menerima GET)
+Tentunya akan sulit jika tidak menerapkan konsep router.
+Perlu kita ketahui, url yang dibangun diatas mesin router dapat menghasilkan url yang lebih bersih dan 
+dapat memperjelas pembagian resources, dapat menangani segment yang dalam. 
+Semua rute dalam aplikasi juga dapat terdokumentasi dengan rapih, bahkan biasanya pada suatu framework, 
+cukup dengan melihat satu file konfigurasi, kita dapat mengetahui semua rute yang ada dalam suatu aplikasi.
+
+Melihat Implementasi Router
+
+Jika teman-teman adalah pengguna PHP, banyak library yang dapat kita gunakan untuk mengimplementasikan mesin router. 
+Seperti misalnya Fastroute, Klein, Alto Router, dll. Mari kita lihat potongan kode implementasi router pada PHP berikut ini :
+=======================================================
+1. require_once __DIR__ . '/router/vendor/autoload.php';
+2.  
+3. $router = new \Klein\Klein();
+4. 
+5. $router->respond('GET', '/hello', function () {
+6. return 'Hello World!';
+7. });
+8.  
+9. $router->respond('GET', '/about-us', function () {
+10. return 'About Us!';
+11. });
+12.  
+13. $router->dispatch();
+=======================================================
+Pada contoh diatas saya menggunakan library Klein buatan Chris O'Hara. Perhatikan baris 5 dan 9, 
+disitulah rute didefinisikan, 
+pada baris 5 kita mendefinisikan jika url yang diakses adalah domain.com/hello, maka akan keluar output "Hello World!", 
+begitu juga barus ke 9, jika url yang diakses adalah domain.com/about-us, maka akan keluar output "About Us!" .
+Lalu perhatikan juga method yang kita ditulis, parameter pertama pada metode 5 dan 9 adalah "GET", 
+artinya mereka hanya merespon suatu request yang berjenis "GET" saja. Rapih bukan?
+Teman-teman juga dapat menyisipkan kode lain, seperti query ke database, redirect, atau mengembalikan nilai suatu fungsi 
+pada setiap route. Perlu digarisbawahi, penggunaan dan implementasi mesin router tidak harus dibarengi dengan arsitektur kode MVC.
+Jika teman-teman ingin membangun aplikasi sederhana dan tidak menggunakan framework (pihak ketiga) manapun, 
+implementasi router sangat bisa dilakukan diatas codebase (atau framework) yang teman-teman bangun.
+Teman-teman juga sangat bisa membuat mesin router sederhana bikinan sendiri jika ingin belajar . 
+Tutorialnya sudah banyak tersebar di internet. Salah satunya pada video berikut ini https://www.youtube.com/watch?v=6reEBParHzQ
+
+Standar Router dan REST
+
+Sebenarnya saya tidak menemukan sumber pembahasan mengenai standar sebuah router. 
+Saya hanya dapat melihat modul router pada framework modern dan populer seperti Rails, Laravel, atau Express. 
+Mereka semua menerapkan router dengan dukungan http verb, artinya dapat kita katakan siap untuk mengimplementasikan arsitektur REST. 
+Setiap endpoint route dapat diatur untuk menangani http method tertentu. 
+Namun ada pula opsi pengaturan untuk menangani semua http method pada satu url.
+
+Baca juga: Mengenal RESTful Web Services
+
+Bisa kita lihat contoh berikut :
+
+Pengaturan route di Rails
+=======================================================
+Rails.application.routes.draw do
+  get "/hello" => "posts#hello"
+end
+=======================================================
+
+Pengaturan route di Laravel
+=======================================================
+Route::get('/hello', 'PostsController@hello'); // Contoh 1
+Route::get('hello', function () { // Contoh 2
+    return 'Hello World';
+});
+=======================================================
+Pengaturan route di Express
+=======================================================
+app.get('/hello', function (req, res) {
+  res.send('hello');
+});
+=======================================================
+Ketiga contoh implementasi tersebut penggunaannya mirip. Pengaturan route dilakukan dengan implementasi closure. 
+Parameter pertama berupa rute yang dimaksud (uri) dan parameter kedua adalah sebuah callback.
+
+Sumber bacaan :
+https://www.codepolitan.com/memahami-istilah-router-pada-web-development-dan-implementasinya
+https://framework.zend.com/manual/2.4/en/in-depth-guide/understanding-routing.html
+http://programmers.stackexchange.com/questions/122190/with-php-frameworks-why-is-the-route-concept-used
