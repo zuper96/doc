@@ -1,9 +1,17 @@
 Apa Itu Hooks ?
+Hooks jika diterjemahkan bebas ke dalam bahasa indonesia artinya kait,kaitan, mengaitkan, menghubungkan.
+
 Hooks adalah suatu tehnik yang memungkinkan suatu aplikasi menjalankan suatu fungsi atau class secara otomatis. 
+atau juga
+Hooks adalah jenis fungsi yang dapat Anda plug (hook) ke sistem yang ada untuk memperluas fungsinya.
+Hooks juga dapat disebut plugin, add-ons atau ekstensi.
 
 Tehnik ini sering sekali digunakan dalam 
 - pembuatan plugin,
 - component dalam suatu aplikasi baik cms,ecommerce,intranet aplikasi. 
+- membuat sebuah log untuk menyimpan data url apa saja yang diakses oleh pengguna,
+- mendata setiap pengunjung yang mengakses halaman,
+- mengatur konfigurasi aplikasi berdasarkan konfigurasi yang kita simpan di database.
 
 Disamping itu juga tehnik ini memiliki kemampuan untuk memaintenace life cycle suatu aplikasi. 
 
@@ -12,4 +20,6 @@ Contoh aplikasi yang menggunakan tehnik ini adalah Content Management Sistem Joo
 
 Dalam implementasinya hooks sangat mendekati tehnik autoload dalam php5. 
 
-Kunjungi www.prowebpro.com untuk menambah wawasan anda.
+Sumber bacaan :
+- Kunjungi www.prowebpro.com untuk menambah wawasan anda.
+- stackoverflow.com
