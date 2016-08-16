@@ -1,0 +1,15 @@
+Apa Itu Hooks ?
+Hooks adalah suatu tehnik yang memungkinkan suatu aplikasi menjalankan suatu fungsi atau class secara otomatis. 
+
+Tehnik ini sering sekali digunakan dalam 
+- pembuatan plugin,
+- component dalam suatu aplikasi baik cms,ecommerce,intranet aplikasi. 
+
+Disamping itu juga tehnik ini memiliki kemampuan untuk memaintenace life cycle suatu aplikasi. 
+
+Sekarang banyak content management sistem menggunakan hooks dalam pembuatan aplikasi.
+Contoh aplikasi yang menggunakan tehnik ini adalah Content Management Sistem Joomla,Drupal,Wordpress. 
+
+Dalam implementasinya hooks sangat mendekati tehnik autoload dalam php5. 
+
+Kunjungi www.prowebpro.com untuk menambah wawasan anda.
