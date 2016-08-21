@@ -7,4 +7,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDA7yLRoOwiVmCfNhK8xbEeBlEFi4uOhFHm
 UOdODFmrEL6zevfBn77BxoWF2er7izdBgyFtI2pPIJvAbTobfXQ9xKDHGjqnLTRHJzlv1Qfb
 GnTVLKrMK8tYPbWHFCOHHAWGp/E5tQMShX1U+pt7pDrBKSxg25yX9jXvH6j8e***********
 ************************************************************************
-**************************************************anda@email.com
+**************************************************email@example.com
+
+Jika ingin membuat ssh key baru ketik :
+======================================
+ssh-keygen -t rsa -C "email@example.com" 
+======================================
