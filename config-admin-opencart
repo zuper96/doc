@@ -1,0 +1,18 @@
+Penambahan Bahasa Indonesia :
+Language name : Indonesia
+Code : id
+Locale : id_ID.UTF-8,id_ID,id-id,Indonesia
+Image : id.png
+Directory : indonesia (huruf kecil)
+Filename : indonesia (huruf kecil)
+Status : Enable
+Sort Order : 1
+
+Penambahan mata uang Rupiah :
+Currency Title : Rupiah
+Code : IDR
+Symbol Left : Rp (setelah ketik Rp, tekan spasi 1x)
+Symbol Right : (dikosongkan)
+Decimal Places : (dikosongkan)
+Value : 1
+Status : Enabled
