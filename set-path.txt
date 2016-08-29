@@ -1,0 +1,48 @@
+Set path relatif current directory untuk set environment :
+gunakan "%~dp0"
+
+contoh penggunaan :
+set path = %~dp0DIRECTORY\SUBDIRECTORY
+
+jika anda menjalankan di F:\DIR_ANDA maka PATH akan di set
+PATH=F:\DIR_ANDA\DIRECTORY\SUBDIRECTORY
+
+jika anda menjalankan di F:\DIR_ANDA2 maka PATH akan di set
+PATH=F:\DIR_ANDA2\DIRECTORY\SUBDIRECTORY
+
+# Menggunakan variabel PATH
+SET NAMAVAR1_PATH=%~dp0Var1
+SET NAMAVAR2_PATH=%~dp0Var2
+SET NAMAVAR3_PATH=%~dp0Var3
+
+SET PATH=%NAMAVAR1_PATH%\subvar1;%NAMAVAR2_PATH%\subvar2;%NAMAVAR3_PATH%\subvar3;%NAMAVAR3_PATH%\subvar3\sublain
+
+Jika file .bat anda jalankan di E:\DIR_ANDA makan PATH akan di set
+PATH=E:\DIR_ANDA\Var1\subvar1;E:\DIR_ANDA\Var2\subvar2;E:\DIR_ANDA\Var3\subvar3;E:\DIR_ANDA\Var3\subvar3\sublain
+
+CONTOH LAIN setpath.cmd di ambil dari (https://tibel.github.io/posts/jekyll-3.0.x-portable/):
+=============================
+@ECHO OFF
+ECHO Adding Jekyll to PATH...
+
+SET RUBY_PATH=%~dp0ruby
+SET DEVKIT_PATH=%~dp0devkit
+
+SET PATH=%RUBY_PATH%\bin;%DEVKIT_PATH%\bin;%DEVKIT_PATH%\mingw\bin;%PATH%
+==============================
+
+CONTOH LAIN setpath2.cmd di ambil dari (https://github.com/madhur/PortableJekyll/blob/master/setpath.cmd) :
+==============================
+@echo off
+@title Portable Jekyll
+
+SET PATH=%~dp0ruby\bin;%~dp0devkit\bin;%~dp0git\bin;%~dp0devkit\mingw\bin;%~dp0curl\bin;%~dp0winscp;%PATH%;
+SET SSL_CERT_FILE=%~dp0curl\bin\cacert.pem
+
+:: Header
+echo Welcome to Portable Jekyll
+echo.
+
+:: now bring current sessions to cmd with /k args (stay)
+call cmd /k
+==============================
