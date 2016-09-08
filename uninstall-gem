@@ -1,0 +1,11 @@
+# remove all old versions of the gem
+gem cleanup gem-name
+
+# choose which ones you want to remove
+gem uninstall gem-name
+
+# remove version 1.1.9 only
+gem uninstall gem-name --version 1.1.9
+
+# remove all versions less than 1.3.4
+gem uninstall gem-name --version '<1.3.4'
