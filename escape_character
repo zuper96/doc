@@ -1,12 +1,15 @@
 Escape Character
-escape character adalah sebuah karakter backward slash atau biasa disingkat backslash atau garis miring terbalik (\).
-
-Dalam dunia IT atau komputer escape karakter digunakan untuk melakukan fungsi khusus yaitu mencegah karakter melakukan suatu fungsi karen jika tidak di escape maka komputer atau program akan melakukan suatu fungsi atau perintah. misal dalam bahasa php :
+Escape character adalah sebuah karakter backward slash atau biasa disingkat backslash atau garis miring terbalik (\).
+Dalam dunia IT atau komputer escape karakter digunakan untuk melakukan fungsi khusus yaitu mencegah karakter melakukan suatu fungsi 
+karen jika tidak di escape maka komputer atau program akan mengeksekusi fungsi atau perintah. misal dalam bahasa php :
 kita ingin menampilkan kata <"contoh"> (dengan tanda kutip)
 
 echo "contoh";
 
-yang ditampilkan adalah <contoh> bukan <"contoh"> padahal yang kita harapkan adalah dengan tanda kutipnya. Hal ini karena tanda tanda petik atau tanda kutip (bahasa Inggris: quotation mark atau double quote) dalam php di artikan sebagai type data yaitu type data string. Agar tanda kutip bisa ditampilkan maka harus menggunakan escape karakter menjadi sebagai berikut
+yang ditampilkan adalah <contoh> bukan <"contoh"> padahal yang kita harapkan adalah dengan tanda kutipnya. 
+Hal ini karena tanda tanda petik atau tanda kutip (bahasa Inggris: quotation mark atau double quote) 
+dalam php di artikan sebagai type data yaitu type data string. 
+Agar tanda kutip bisa ditampilkan maka harus menggunakan escape karakter menjadi sebagai berikut
 
 echo "\"contoh\"";
 
