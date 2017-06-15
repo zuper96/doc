@@ -1,5 +1,4 @@
 Escape Character
-Escape character adalah sebuah karakter backward slash atau biasa disingkat backslash atau garis miring terbalik (\).
 Dalam dunia IT atau komputer escape karakter digunakan untuk melakukan fungsi khusus yaitu mencegah karakter melakukan suatu fungsi 
 karen jika tidak di escape maka komputer atau program akan mengeksekusi fungsi atau perintah. misal dalam bahasa php :
 kita ingin menampilkan kata <"contoh"> (dengan tanda kutip)
@@ -13,6 +12,7 @@ Agar tanda kutip bisa ditampilkan maka harus menggunakan escape karakter menjadi
 
 echo "\"contoh\"";
 
+Escape character umumnya menggunakan sebuah karakter backward slash atau biasa disingkat backslash atau garis miring terbalik (\).
 Berikut escape karakter diberbagai penggunaan dalam dunia IT
 
 Bahasa PHP :
